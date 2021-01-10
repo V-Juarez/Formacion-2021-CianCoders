@@ -86,4 +86,40 @@
   ## Funciones
   * En el contexto de la programación, una función es una secuencia enunciados (statements) con un nombre que realizan un cómputo
   * Una función tiene un nombre,parámetros (opcional) y valor de regreso (return value)(opcional)
-  * Python incluye varias built-in functions en su [librería estándar](https://docs.python.org/es/3/library/). 
+  * Python incluye varias built-in functions en su [librería estándar](https://docs.python.org/es/3/library/). En el contexto de la programación, una función es una secuencia enunciados (statements) con un nombre que realizan un cómputo
+  * Una función tiene un nombre,parámetros (opcional) y valor de regreso (return value)(opcional)
+  * Python incluye varias built-in functions en su librería estándar. 
+
+  * Otras funciones se pueden encontrar en módulos
+    * Para utilizarlas es necesario importar el módulo
+      * Ejmplo `import math`
+    * Para declar una función, utilizamos el keyword `def`
+      * Ejemplo `def my_fuction(first_arg, second_arg=None)`
+    Las funciones se pueden componer.
+      ```python
+      def sum_two_numbers(x,y):
+        return x + y
+
+
+        other_function(sum_two_numers(3,4))
+      ```
+    * Los argumentos pueden ser posicionales (positional arguments) o con nombre (named arguments)
+      * Los parámetros y variables son locales a la función
+        * global keyword
+      * Orden de ejecución
+        * Arriba para abajo
+        * Izquierda a derecha
+
+         
+## Estructuras condicionales
+
+  * Una expresión boolena siempre evalúa como verdadero `(True)` o como falso `(False)`
+  * Operadores de comparación
+    * x = 2
+    * y = 2
+      * x == y
+      * x != y
+      * x > y
+      * x < y
+      * x >= y
+      * x <= y
