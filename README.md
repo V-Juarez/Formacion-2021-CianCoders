@@ -4,5 +4,5 @@ Repositorio de contenido y apuntes de python
 
 <p align="center"><a href=""><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" width="600"></a></p>
 
-**[python-apuntes](https://github.com/V-Juarez/Formacion-2021-CianCoders/tree/master)
+**[python-apuntes](https://github.com/V-Juarez/Formacion-2021-CianCoders/tree/master)**
 
