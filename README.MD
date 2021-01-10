@@ -4,6 +4,12 @@
 # Tabla de contenido
 - [¿Qué es la programación?](¿Qué-es-la-programación?)
 - [¿Por qué programar con Python?](¿Por-qué-programar-con-Python?)
+- [Operadores matemáticos](Operadores-matemáticos)
+- [Variables y expresiones](Variables-y-expresiones)
+- [Funciones](Funciones)
+- []()
+- []()
+- []()
 
 # ¿Qué es la programación?
  
@@ -58,9 +64,9 @@
    * No debe comenzar con número
    * Múltiples palabras se unen con _
       * multiple_words
-   * No se pueden utilizar palabras reservadas
+   * No se pueden utilizar [palabras reservadas](https://ellibrodepython.com/palabras-reservadas-python)
 
-   ![](variables_expresiones)
+   * __[turtle](https://docs.python.org/3/library/turtle.html#:~:text=The%20turtle%20module%20is%20an,%20100%25%20compatible%20with%20it.)__
 
    * Una expresión (expression) es una combinación de valores, variables y operadores.
     * El intérprete evalúa expresiones
@@ -80,4 +86,4 @@
   ## Funciones
   * En el contexto de la programación, una función es una secuencia enunciados (statements) con un nombre que realizan un cómputo
   * Una función tiene un nombre,parámetros (opcional) y valor de regreso (return value)(opcional)
-  * Python incluye varias built-in functions en su librería estándar. 
+  * Python incluye varias built-in functions en su [librería estándar](https://docs.python.org/es/3/library/). 
