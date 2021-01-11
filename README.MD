@@ -2,14 +2,17 @@
 <p align="center"><a href=""><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" width="600"></a></p>
 
 # Tabla de contenido
-- [¿Qué es la programación?](¿Qué-es-la-programación?)
-- [¿Por qué programar con Python?](¿Por-qué-programar-con-Python?)
-- [Operadores matemáticos](Operadores-matemáticos)
-- [Variables y expresiones](Variables-y-expresiones)
-- [Funciones](Funciones)
-- []()
-- []()
-- []()
+- [¿Qué es la programación?](#¿Qué-es-la-programación?)
+  - [¿Por qué programar con Python?](#¿Por-qué-programar-con-Python?)
+  - [Operadores matemáticos](#Operadores-matemáticos)
+  - [Variables y expresiones](#Variables-y-expresiones)
+  - [Funciones](#Funciones)
+  - [Estructuras condicionales](#Estructuras-condicionales)
+- [Uso de strings y ciclos](#Uso-de-strings-y-ciclos)
+  - [Strings en Pyhton](#Strings-en-Pyhton)
+- [](#)
+- [](#)
+- [](#)
 
 # ¿Qué es la programación?
  
@@ -117,9 +120,99 @@
   * Operadores de comparación
     * x = 2
     * y = 2
-      * x == y
-      * x != y
-      * x > y
-      * x < y
-      * x >= y
-      * x <= y
+    * x == y
+    * x != y
+    * x > y
+    * x < y
+    * x >= y
+    * x <= y
+
+  ### Operadores lógicos
+ **Operador lógico and**
+
+  | p | q | and |    
+  |----:| :------:|:------ |
+  | T | T | T |
+  | T | F | F |
+  | F | T | F |
+  | F | F | F |
+
+  **Operador lógico or**
+  | p | q | or |    
+  |----:| :------:|:------ |
+  | T | T | T |
+  | T | F | T |
+  | F | T | T |
+  | F | F | F |
+
+  **Operador lógico not**
+  |  | q | not |    
+  |----:| :------:|:------ |
+  |  | T | F |
+  |  | F | T |
+  |  | T | F |
+  |  | F | F |
+
+* Ejemplo 
+
+  ```python
+  x = 2
+  y = 3
+  a = 5
+  b = 7
+
+  (x < y) and (a > b)     # True
+  (x < y) and (a > b)     # False
+  (x < y) or (a > b)      # True
+
+  if x < y:
+    print('x es menor que y')
+  else:
+    print('x no es menor que y')  # x es menor que y
+  ```
+  
+# Uso de strings y ciclos
+
+  ## Strings en Pyhton
+
+  * Las cadenas (strings) es un tipo con comportamiento diferente a los `int`, `float` y `bool`.
+      * Las cadenas son secuencias
+      * Las secuencias se pueden acceder a través de un índice
+        ```python
+        apple = 'apple'
+        apple[1]
+        ```
+      * Las cadenas (al igual que otras secuencias) tienen una longitud
+        * Para saber la longitud de una secuencia, se puede usar la función `len`
+          * `len(apple)`
+        * En Python, los caracteres que componen un string se reutilizan a lo largo del programa
+          * Esto ayuda a reducir la cantidad de memoria que necesita el programa
+          * También significa que los strings deben ser inmutables
+            ```python
+            x = 'a'
+            y = 'b'
+            id(x) == id(y)
+            ```
+          
+
+  ## Operaciones con strings
+   
+   * Los strings tiene varios métodos que nos sirven para manipularlas.
+   * Algunos son:
+
+  ```python  
+    upper
+    lower
+    find
+    startswith
+    endswith
+    capitalize
+  ```
+  * Operadores de pertenencia
+    ```python
+    in
+    not in
+    ```
+  * Comparaciones entre strings
+    * Las comparaciones son lexicográficas
+    * Tener cuidado `'a'` y `'A'`  son diferentes.
