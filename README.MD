@@ -10,7 +10,7 @@
   - [Estructuras condicionales](#Estructuras-condicionales)
 - [Uso de strings y ciclos](#Uso-de-strings-y-ciclos)
   - [Strings en Pyhton](#Strings-en-Pyhton)
-- [](#)
+  - [Operaciones con strings](#Operaciones-con-strings)
 - [](#)
 - [](#)
 
@@ -216,3 +216,7 @@
   * Comparaciones entre strings
     * Las comparaciones son lexicográficas
     * Tener cuidado `'a'` y `'A'`  son diferentes.
+  
+  Otros `dir()` y `help()`. 
+
+  ## Operaciones con strings y el comando Update
