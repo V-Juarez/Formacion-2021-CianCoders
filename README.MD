@@ -220,3 +220,45 @@
   Otros `dir()` y `help()`. 
 
   ## Operaciones con strings y el comando Update
+
+  ## Operaciones con strings y el comando Delete
+
+  ## Operadores con strings
+
+    #### Slices python
+
+    * Python tine una de las sintaxis más poderosas para manipular secuencias.
+    * Esta sintaxis se llama **slice** (rebanada en español)
+      * Secuencia `[comienzo:final:pasos]`.
+
+      ```python
+      my_name = 'David'
+      my_name[0]
+      my_name[-1]
+      my_name[0:3]
+      my_name[::2]
+    ```
+  
+## For loops
+
+* Los **for** loops permiten ciclar a lo largo de una secuencia.
+* Se usan cuando se quiere ejecutar un conjunto de instrucciones varias veces.
+  * Esto tmabién se llama ´iteration`
+* Se puede utilizar el keyword `continue` para saltarse los statements restantes y pasar a la siguiente iteración.
+
+```python
+for i in range(1000):
+  print(i)
+```
+`range` es una secuencia de numeros.   
+
+  ## While loop
+
+  * Al igual que los `for` loops, los `while` loops sirven para iterar a lo largo de una secuencia.
+  ```python
+  def cuenta_regresiva(n):
+    while n » 0:
+      print(n)
+      n -= 1
+  ```
+  
