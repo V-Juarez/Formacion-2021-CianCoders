@@ -261,4 +261,113 @@ for i in range(1000):
       print(n)
       n -= 1
   ```
-  
+  ## Iterators and generators
+
+  Aunque no lo sepas, probablemente ya utilices iterators en tu vida diaria como programador de Python. Un iterator es simplemente un objeto que cumple con los requisitos del Iteration Protocol (protocolo de iteración) y por lo tanto puede ser utilizado en ciclos. Por ejemplo,
+```python
+for i in range(10):
+    print(i)
+```
+En este caso, la función range es un iterable que regresa un nuevo valor en cada ciclo. Para crear un objeto que sea un iterable, y por lo tanto, implemente el protocolo de iteración, debemos hacer tres cosas:
+    • Crear una clase que implemente los métodos iter y next
+    • `iter` debe regresar el objeto sobre el cual se iterará
+    • `next` debe regresar el siguiente valor y aventar la excepción StopIteration cuando ya no hayan elementonexteclaramos una función y utilizamos el keyword yield en vez de return para regresar el siguiente valor en una iteración. Por ejemplo,
+```python
+def fibonacci(max):
+  a, b = 0, 1
+  while a < max:
+      yield a
+      a, b = b, a+b
+```
+Es importante recalcar que una vez que se ha agotado un generator ya no podemos utlizarlo y debemos crear una nueva instancia. Por ejemplo,
+```python
+fib1 = fibonacci(20)
+fib_nums = [num for num in fib1]
+...
+double_fib_nums = [num * 2 for num in fib1] # no va a funcionar
+double_fib_nums = [num * 2 for num in fibonacci(30)] # sí funciona
+```
+
+# Estructuras de datos
+
+  ## Uso de listas
+  * Como los strings, las listas son secuencias de valores.
+    * En las listas, los valores pueden tener cualquier tipo.
+      ```python
+      [2, 4, 6]
+      ['Colombia', 'Mexico', 'Argentina']
+      ['tacos', 3, 'areoas', 6, 'chorizo', 9]
+      ```
+    * Las listas son mutables, a diferenic de los strings
+      ```python
+      my_list = [1, 2, 3]
+      my_list[2] = 6
+      ```
+    * Los índeces de las listas, funcionan igual que los de los strings
+    * Las listas se inician con `[]` o con la función `list`
+
+    **Copiar una lista**
+
+    ```python
+    import copy
+
+    # Copiar lista
+    countries = ['Guatemala', 'Venezuela', 'Colombia', 'Argentina']
+    global_countries = copy.copy(countries)
+
+    # Asignamos un nuevo pais
+    countries[0] = 'Honduras'
+    countries
+    ['Honduras', 'Venezuela', 'Colombia', 'Argentina']
+
+    # Conserva los datos
+    global_countries
+    ['Guatemala', 'Venezuela', 'Colombia', 'Argentina']
+
+    # for
+    for country in countries:
+      print(country)
+ 
+    Honduras
+    Venezuela
+    Colombia
+    Argentina
+    ``` 
+
+  ## Operaciones con listas
+
+  * El operador `+ (suma)` concatena dos o más listas
+    ```python
+    a = [1, 2]
+    b = [2, 3]
+    a + b # [1, 2]
+    ```
+  * El opeador `* (multiplicación)` repite la misma lista
+    ```python
+    a = [1, 2]
+    a * 2 # [1, 2, 1, 2]
+  ```
+  * Para añadir un elemento al final de listas, podemos utilizar el método `append`
+  ```python
+  a = [1, 2]
+  a.append(2) # [1, 2]
+  ```
+  * Para eliminar el último elemento de la lista, podemos y utilizar el método `pop`
+    * Este método, también regresa el valor que fue eliminado
+    ```python
+    a = [1, 2]
+    b = a.pop[2]
+    print(a)    # [1]
+    print(b)     # 2
+    ```
+  * Para ordenar una lista, podemos utilizar el método `sort`
+    ```python
+    a = [3, 8, 1]
+    a.sort() # [1, 3, 8]
+    ```
+  * Para eliminar elementos, también podemos utilzar el keyword `del`
+    * `del` también con `slices`
+    ```python
+    a = [1, 2, 3]
+    del a[-1]
+  * Si sabes qué el elemento quieres eliminar, pero no su índice, puedes utilizar el método `remove`.
