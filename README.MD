@@ -225,18 +225,18 @@
 
   ## Operadores con strings
 
-    #### Slices python
+  #### Slices python
 
-    * Python tine una de las sintaxis más poderosas para manipular secuencias.
-    * Esta sintaxis se llama **slice** (rebanada en español)
-      * Secuencia `[comienzo:final:pasos]`.
+  * Python tine una de las sintaxis más poderosas para manipular secuencias.
+  * Esta sintaxis se llama **slice** (rebanada en español)
+    * Secuencia `[comienzo:final:pasos]`.
 
-      ```python
-      my_name = 'David'
-      my_name[0]
-      my_name[-1]
-      my_name[0:3]
-      my_name[::2]
+    ```python
+    my_name = 'David'
+    my_name[0]
+    my_name[-1]
+    my_name[0:3]
+    my_name[::2]
     ```
   
 ## For loops
@@ -276,7 +276,7 @@ for i in range(1000):
     * Si es falsa, sal del bloque y continúa ejecuctando el programa
   * Se tiene que tener mucho cuidado para evitar un ifinite loop
   * Se puede utilizar el keyword break se se quiere salir anticipadamente del ciclo.
-  
+
 
   ## Iterators and generators
 
@@ -363,14 +363,17 @@ double_fib_nums = [num * 2 for num in fibonacci(30)] # sí funciona
     ```python
     a = [1, 2]
     a * 2 # [1, 2, 1, 2]
-  ```
-  * Para añadir un elemento al final de listas, podemos utilizar el método `append`
+    ```
+  * Para añadir un elemento al final de listas, podemos utilizar el método `append`.
+
   ```python
   a = [1, 2]
   a.append(2) # [1, 2]
   ```
-  * Para eliminar el último elemento de la lista, podemos y utilizar el método `pop`
+  * Para eliminar el último elemento de la lista, podemos y utilizar el método `pop`.
+
     * Este método, también regresa el valor que fue eliminado
+
     ```python
     a = [1, 2]
     b = a.pop[2]
@@ -384,7 +387,62 @@ double_fib_nums = [num * 2 for num in fibonacci(30)] # sí funciona
     ```
   * Para eliminar elementos, también podemos utilzar el keyword `del`
     * `del` también con `slices`
+
     ```python
     a = [1, 2, 3]
     del a[-1]
+    ```
   * Si sabes qué el elemento quieres eliminar, pero no su índice, puedes utilizar el método `remove`.
+
+  ## Diccionarios
+  
+  * Un diccionario es similar a un lista en el sentido de que se puede acceder a través de índeces (en el diccionario se llaman llaves)
+
+    * En la lista de los índices tienen que ser enteros.
+
+    * En el diccionario pueden ser casi cualquier tipo
+
+  * Un diccionario es una asociación entre llaves `(keys)` y valores `(values)`.
+
+  * Los diccionarios se inicializan con `{}` o con la funcion `dict`.
+  
+  ```python
+  productos = {}
+  prodcutos{`leche`} = 23.50
+  ```
+  ### Métodos de un diccionario
+    
+  * Existen varias formas de ciclar a lo largo de un diccionario
+  
+  ```python
+  for key in my_duct_keys():
+    pass
+
+  for value in my_dict_values():
+    pass
+
+  for key, value in my_dict_items():
+    pass
+  ```
+
+  ## Tuplas y conjuntos
+
+  * Las tuplas `(tuples)` son similares a las listas.
+    * La mayor diferenica es que son inmutables.
+  * Lo que define a un tuple es que sus valores están separados por comas.
+    * Es buena práctica utilizar un paréntesis también para ayudar a la legibilidad
+    ```python
+    tup = 1, 3, 4
+    tup = (1, 2, 3)
+    ```
+  * También pidemos utilizar la función `tuple`.
+  * Un uso muy común es utilizarlas para regresar más de un valor en una función `retrun(students, teachers)`
+  
+  **Conjuntos**
+
+  * Los conjuntos `(sets)` son una colección sin orden que no permite elementos duplicados.
+  * Los `sets` se inicializan conla función `set`.
+  * Para anñadir elementos utilizamos el método `add`
+  * Y para eliimarlos, el método `remove`.
+
+  
