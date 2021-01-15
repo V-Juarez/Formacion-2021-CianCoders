@@ -261,6 +261,23 @@ for i in range(1000):
       print(n)
       n -= 1
   ```
+  ## While loops
+
+  * Al igual que los for loops, los while loops sirven para iterar a lo largo de un secuela
+    ```python
+    def cuenta_regresiva(n):
+      while n > 0:
+        print(n)
+        n -= 1
+    ```
+  * Los while loops se ejecutan de la siguiente manera:
+    * Determinan si la condición es verdadera
+    * Si es verdadera, vuelve a ejecutar el loop
+    * Si es falsa, sal del bloque y continúa ejecuctando el programa
+  * Se tiene que tener mucho cuidado para evitar un ifinite loop
+  * Se puede utilizar el keyword break se se quiere salir anticipadamente del ciclo.
+  
+
   ## Iterators and generators
 
   Aunque no lo sepas, probablemente ya utilices iterators en tu vida diaria como programador de Python. Un iterator es simplemente un objeto que cumple con los requisitos del Iteration Protocol (protocolo de iteración) y por lo tanto puede ser utilizado en ciclos. Por ejemplo,

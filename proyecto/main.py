@@ -1,5 +1,4 @@
-
-
+import sys
 
 
 clients = 'pablo,ricardo,'
@@ -57,19 +56,39 @@ def _add_comma():
  
     clients += ','
 
+#metodo
+
+
+def _get_client_name():
+    client_name = None
+
+    while not client_name:
+        client_name = input('whats is the client name? ')
+
+        if client_name == 'exit':
+            client_name = None
+            break
+
+    if not client_name:
+        sys.exit()
+
+
+    return client_name
+    #return input('What is the client name? ')
+
+
 # Mensaje de bienvenida
 def _print_welcome():
     print('WELCOME TO PLATZI VENTAS')
     print('*' * 50)
     print('What woul you like to do today?')
     print('[C]reate client')
+    print('[L]ist client')
     print('[U]pdate client')
     print('[D]elete client')
     print('[S]earch client')
 
-#metodo
-def _get_client_name():
-    return input('What is the client name? ')
+    print('*' * 50)
 
 
 if __name__ == '__main__':
@@ -82,14 +101,16 @@ if __name__ == '__main__':
         client_name = _get_client_name()
         create_client(client_name)
         list_clients()
-    elif command == 'D':
-        client_name = _get_client_name()
-        delete_client(client_name)
+    elif command == 'L':
         list_clients()
-    elif command == 'U':  # Actualizar 
+    elif command == 'U':  # Actualizar
         client_name = _get_client_name()
         update_client_name = input('What is the updated client name? ')
         update_client(client_name, update_client_name)
+        list_clients()
+    elif command == 'D':
+        client_name = _get_client_name()
+        delete_client(client_name)
         list_clients()
     elif command == 'S':
         client_name = _get_client_name()
