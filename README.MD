@@ -538,3 +538,7 @@ non_repeated = {number for number in random_numbers}
 >>> non_repeated
 {1, 2, 3}
 ```
+
+  ## Busqueda binaria
+  
+
