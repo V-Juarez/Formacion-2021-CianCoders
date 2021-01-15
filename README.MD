@@ -445,4 +445,96 @@ double_fib_nums = [num * 2 for num in fibonacci(30)] # sí funciona
   * Para anñadir elementos utilizamos el método `add`
   * Y para eliimarlos, el método `remove`.
 
-  
+  ## Módulo Collections
+
+  El módulo collections nos brinda un conjunto de objetos primitivos que nos permiten extender el comportamiento de las built-in collections que poseé Python y nos otorga estructuras de datos adicionales. Por ejemplo, si queremos extender el comportamiento de un diccionario, podemos extender la `clase UserDict`; para el caso de una lista, extendemos `UserList`; y para el caso de `strings`, utilizamos `UserString`.
+
+Por ejemplo, si queremos tener el comportamiento de un diccionario podemos escribir el siguiente código:
+```python
+class SecretDict(collections.UserDict):
+
+   def _password_is_valid(self, password):
+        …
+
+    def _get_item(self, key):
+        … 
+
+    def __getitem__(self, key):
+         password, key = key.split(‘:’)
+         
+         if self._password_is_valid(password):
+              return self._get_item(key)
+         
+         return None
+
+my_secret_dict = SecretDict(...)
+my_secret_dict[‘some_password:some_key’] # si el password es válido, regresa el valor
+```
+Otra estructura de datos que vale la pena analizar, es namedtuple. Hasta ahora, has utilizado tuples que permiten acceder a sus valores a través de índices. Sin embargo, en ocasiones es importante poder nombrar elementos (en vez de utilizar posiciones) para acceder a valores y no queremos crear una clase ya que únicamente necesitamos un contenedor de valores y no comportamiento.
+```python
+Coffee = collections.NamedTuple(‘Coffee’, (‘size’, ‘bean’, ‘price’))
+def get_coffee(coffee_type):
+     If coffee_type == ‘houseblend’:
+         return Coffee(‘large’, ‘premium’, 10)
+```
+El módulo collections también nos ofrece otros primitivos que tienen la labor de facilitarnos la creación y manipulación de colecciones en Python. Por ejemplo, `Counter` nos permite contar de manera eficiente ocurrencias en cualquier iterable; `OrderedDict` nos permite crear diccionarios que poseen un orden explícito; deque nos permite crear filas `(para pilas podemos utilizar la lista)`.
+
+En conclusión, el módulo collections es una gran fuente de utilerías que nos permiten escribir código más “pythonico” y más eficiente.
+
+  ## Comprehensions
+
+  * Comprenhensions son constructos que nos permite generar secuencias a partir de otras secuencias.
+
+  * List Comprehension
+    * `[element for element in element_list if element_meets_condition]`
+  * Dictionary Comprehension
+    + `{key: element for element in element_list if element_meets_condition}`
+  * Set Comprehension
+    * `{element for element in element_list if element_meets_condition}`
+
+**List Comprehension**
+```python
+lista_de_numeros = list(range(100))
+
+# consola
+>>>>lista_de_numeros
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,91, 92, 93, 94, 95, 96, 97, 98, 99]
+
+------------------------------------------------------------
+pares = [numero for numero in lista_de_numeros if numero % 2 == 0]
+
+# console
+>>>> Pares
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98]
+
+**Dictionary Comprehension**
+
+  ```python
+  student_uid = [1, 2, 3]
+  students = ['Juan', 'Jose', 'Larsen']
+  Students_whith_uid = {uid: student for uid, student in zip(student_uid, students)}
+
+  # consola
+  >>>> students_with_uid
+  {1: 'Juan', 2: 'Jose', 3: 'Larsen'}
+  ```
+
+**Set Comprehension**
+
+```python
+import random
+random_numbers = []
+for i in range(10):
+  random_numbers.append(random.randint(1, 3))
+
+# console
+>>> random_numbers
+[2, 2, 3, 3, 2, 1, 3, 3, 1, 1]
+
+non_repeated = {number for number in random_numbers}
+
+# console
+>>> non_repeated
+{1, 2, 3}
+```
