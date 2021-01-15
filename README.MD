@@ -540,5 +540,21 @@ non_repeated = {number for number in random_numbers}
 ```
 
   ## Busqueda binaria
-  
 
+  # Objetos y modulos
+
+  ## Decoradores
+
+  * Los decoradores permiten extender y modificar el funcionamiento de las funciones.
+  * Los decoradores envuelven a otra función y permiten ejecutar código antes y después de que es llamada.
+  ```python
+  def lower_case(func):
+    def wrapper():
+      # Execute code before
+      result = func()
+      # execute code after
+      return result
+
+    return wrapper
+  ```
+  
