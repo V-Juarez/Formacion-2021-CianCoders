@@ -671,5 +671,19 @@ def some_function():
 
   ### Instalar entorno vitual
   ```commando
-  vitualenv --python=python3 venv
+  # Instalar virtualenv
+
+  pip install virtualenv
+
+  # Instalar entorno 
+
+  virtualenv --python=python3 venv
+
+  # Inicar entorno
+
+  source venv/bin/activate
+
+  # Desconectar entorno
+
+  deactivate
   ```
